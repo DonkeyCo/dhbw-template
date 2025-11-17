@@ -1,0 +1,57 @@
+\usepackage[utf8]{inputenc}  
+\usepackage[english]{babel}   
+\usepackage[babel]{csquotes}
+\usepackage{graphicx}        
+\usepackage{wrapfig}         
+\usepackage{setspace}        
+\usepackage{svg}  
+\usepackage{ifthen}
+\usepackage{acronym}
+\usepackage{appendix}
+\usepackage{titletoc}
+\usepackage[                     % Klickbare Links (enth. auch "nameref", "url" Package)
+    hidelinks,                     % Blende die "URL Boxen" aus.
+    breaklinks=true                % Breche zu lange URLs am Zeilenende um
+]{hyperref}
+
+% Source Code
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{siunitx} 
+\usepackage{tabularx}
+
+% Boxes
+\usepackage{amsthm}                    
+\usepackage[framemethod=tikz]{mdframed}
+
+\usepackage{sourcecodepro}
+\usepackage[T1]{fontenc}
+
+\usepackage[
+	backend = biber,                
+	language = auto,
+	style = numeric,                
+	sorting = none,                 
+	sortcites = true,               
+	block = ragged,                 
+	hyperref = true,                
+	%backref = true,                
+	bibencoding = auto,
+	giveninits = true,              
+	doi=false,                      
+	isbn=false,                     
+    alldates=short     
+]{biblatex}
+
+\addbibresource{appendix/sources.bib}
+\setcounter{biburlnumpenalty}{3000}     
+\setcounter{biburlucpenalty}{6000}      
+\setcounter{biburllcpenalty}{9000}      
+
+\usepackage[babel]{csquotes}  

@@ -1,0 +1,41 @@
+\input{config/preamble}
+
+\begin{document}
+
+% Title Page
+\include{frontmatter/titlepage}
+
+\newcounter{savepage}
+\pagenumbering{Roman}
+
+% Front Matter
+\include{frontmatter/abstract}
+\include{frontmatter/declaration}
+\ifthenelse{\boolean{is-confidential}}
+    {\include{frontmatter/confidential}}
+    {}
+
+\tableofcontents
+
+\include{frontmatter/abbreviations}
+\listoffigures
+\listoftables
+\renewcommand{\lstlistlistingname}{Listings}
+\lstlistoflistings
+\setcounter{savepage}{\value{page}}
+
+\cleardoublepage
+\pagenumbering{arabic}
+\rmfamily
+\onehalfspacing
+
+% Include Chapters and Content here
+\include{content/chapter1}
+\include{content/chapter2}
+\include{content/chapter3}
+
+\include{appendix/appendix}
+
+\printbibliography[title=Bibliography]
+
+\end{document}

@@ -1,0 +1,44 @@
+% Defines metadata for the report
+
+% ----- Author & Title
+\newcommand{\firstname}{Max}
+\newcommand{\surname}{Mustermann}
+\author{\firstname \ \surname}
+\newcommand{\thetitle}{DHBW Report Template}
+\newcommand{\theauthor}{\firstname \ \surname}
+
+% ----- Project Information
+\newcommand{\projectType}{Work Integrated Project I}
+\newcommand{\period}{1 October 2025 - 31 December 2025}
+\newcommand{\workMonth}{December 2025}
+\newcommand{\submissionDate}{1 January 2026}
+\newcommand{\place}{Place}
+
+% ----- University Information
+\newcommand{\uni}{DHBW ABC}
+\newcommand{\uniStudy}{Computer Science}
+\newcommand{\uniStudyYear}{2025}
+\newcommand{\uniCourse}{Course}
+\newcommand{\uniMatrnr}{Matrikel No.}
+\newcommand{\uniSupervisor}{Jane Doe}
+
+% ----- Company Information
+\newcommand{\company}{Company ABC}
+\newcommand{\companyStreet}{Musterweg 123}
+\newcommand{\companyPlace}{12345 Musterort, Germany}
+\newcommand{\companySupervisor}{John Doe}
+\newcommand{\companyDepartment}{Department ABC}
+
+% ----- Conditional Flags
+
+% Online Submission: Will replace signature lines with "e-signatures"
+\newboolean{e-submission}           
+\setboolean{e-submission}{false}
+
+% Include Author's declaration?
+\newboolean{include-declaration}     
+\setboolean{include-declaration}{true}
+
+% Is content confidential? Includes statement if that is the case
+\newboolean{is-confidential}            
+\setboolean{is-confidential}{true}
