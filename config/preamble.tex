@@ -1,20 +1,68 @@
+% ===================================================================
+% DOCUMENT CLASS AND BASIC CONFIGURATION
+% ===================================================================
+% 
+% This file contains the fundamental document setup including:
+% - Document class selection and options
+% - Basic formatting settings
+% - Code syntax highlighting setup
+%
+% For beginners: This file is loaded first and sets up the basic
+% structure of your document before any packages or content.
+% ===================================================================
+
+% ===================================================================
+% DOCUMENT CLASS: KOMA-Script Report Class
+% ===================================================================
+% We use 'scrreprt' (KOMA-Script report class) which is designed for
+% academic documents and provides better typography than standard LaTeX classes.
+%
+% Document class options explained:
 \documentclass[
-  fontsize=12pt,           
-	paper=A4,
-	twoside=false,
-	listof=totoc,            
-	bibliography=totoc,      
-	titlepage,
-	headsepline
+  fontsize=12pt,           % Font size - standard for academic work
+  paper=A4,               % Paper size - European standard
+  twoside=false,          % Single-sided printing (set to true for double-sided)
+  listof=totoc,           % Include lists (figures, tables) in table of contents
+  bibliography=totoc,     % Include bibliography in table of contents
+  titlepage,              % Create a separate title page
+  headsepline            % Add a line under page headers
 ]{scrreprt}
 
+% ===================================================================
+% LOAD CONFIGURATION FILES
+% ===================================================================
+% These files contain all the detailed configuration for your document.
+% They are separated for better organization and easier maintenance.
+
+% Load all LaTeX packages and their configuration
 \input{config/dependencies}
+
+% Load document metadata (your name, title, university info, etc.)
 \input{config/metadata}
+
+% Load custom commands and shortcuts you can use in your document
 \input{config/custom}
 
+% ===================================================================
+% PARAGRAPH AND CONTENT FORMATTING
+% ===================================================================
+
+% Remove paragraph indentation (academic style - use spacing instead)
 \setlength{\parindent}{0em}
+
+% Set margin for table of contents (fine-tuning for better appearance)
 \contentsmargin{0.725cm}
 
+% ===================================================================
+% CODE SYNTAX HIGHLIGHTING SETUP
+% ===================================================================
+% This section defines how code listings will be displayed in your document.
+% Currently configured for JavaScript, but you can add more languages.
+%
+% For beginners: If you include code in your report, this makes it look
+% professional with proper colors and formatting.
+
+% Define JavaScript syntax highlighting
 \lstdefinelanguage{JavaScript}{
   keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
   keywordstyle=\color{blue}\bfseries,
@@ -30,4 +78,6 @@
   morestring=[b]"
 }
 
+% Set default font for all code listings to typewriter font (monospace)
+% This ensures consistent spacing for code alignment
 \lstset{basicstyle=\ttfamily}
