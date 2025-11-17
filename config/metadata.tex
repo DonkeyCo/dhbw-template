@@ -1,126 +1,40 @@
-% ===================================================================
-% DOCUMENT METADATA AND PERSONAL INFORMATION
-% ===================================================================
-% 
-% This file contains ALL the personal and project information for your report.
-% You MUST update this file with your own information before compiling!
-%
-% For beginners: This is the most important file to customize. All the
-% information here will automatically appear on your title page and throughout
-% the document. Change the values between the curly braces { }.
-%
-% STEP-BY-STEP CUSTOMIZATION GUIDE:
-% 1. Update your personal information (name, matriculation number)
-% 2. Update project details (title, type, dates)
-% 3. Update university information (course, supervisor)
-% 4. Update company information (name, address, supervisor)
-% 5. Set the conditional flags at the bottom
-% ===================================================================
+% Document metadata and personal information
 
-% ===================================================================
-% AUTHOR & TITLE INFORMATION
-% ===================================================================
-% TODO: Replace with your actual information
+% Author & Title
+\newcommand{\firstname}{Max}
+\newcommand{\surname}{Mustermann}
+\author{\firstname \ \surname}
+\newcommand{\thetitle}{DHBW Report Template}
+\newcommand{\theauthor}{\firstname \ \surname}
 
-\newcommand{\firstname}{Max}                    % Your first name
-\newcommand{\surname}{Mustermann}               % Your last name
-\author{\firstname \ \surname}                  % This combines first and last name
-\newcommand{\thetitle}{DHBW Report Template}   % Title of your report/thesis
-\newcommand{\theauthor}{\firstname \ \surname} % Full name (used in various places)
+% Project Information
+\newcommand{\projectType}{Work Integrated Project I}
+\newcommand{\period}{1 October 2025 - 31 December 2025}
+\newcommand{\workMonth}{December 2025}
+\newcommand{\submissionDate}{1 January 2026}
+\newcommand{\place}{Place}
 
-% ===================================================================
-% PROJECT INFORMATION
-% ===================================================================
-% Details about your specific project or thesis
+% University Information
+\newcommand{\uni}{DHBW ABC}
+\newcommand{\uniStudy}{Computer Science}
+\newcommand{\uniStudyYear}{2025}
+\newcommand{\uniCourse}{Course}
+\newcommand{\uniMatrnr}{Matrikel No.}
+\newcommand{\uniSupervisor}{Jane Doe}
 
-\newcommand{\projectType}{Work Integrated Project I}    % Type of work:
-                                                        % - "Bachelor Thesis"
-                                                        % - "Work Integrated Project I"
-                                                        % - "Work Integrated Project II" 
-                                                        % - "Study Project"
-                                                        % - etc.
+% Company Information
+\newcommand{\company}{Company ABC}
+\newcommand{\companyStreet}{Musterweg 123}
+\newcommand{\companyPlace}{12345 Musterort, Germany}
+\newcommand{\companySupervisor}{John Doe}
+\newcommand{\companyDepartment}{Department ABC}
 
-\newcommand{\period}{1 October 2025 - 31 December 2025}  % Project duration
-\newcommand{\workMonth}{December 2025}                   % Month of completion
-\newcommand{\submissionDate}{1 January 2026}             % When you submit the report
-\newcommand{\place}{Place}                               % City where you wrote the report
+% Document Flags
+\newboolean{e-submission}
+\setboolean{e-submission}{false}
 
-% ===================================================================
-% UNIVERSITY INFORMATION (DHBW)
-% ===================================================================
-% Information about your DHBW location and studies
+\newboolean{include-declaration}
+\setboolean{include-declaration}{true}
 
-\newcommand{\uni}{DHBW ABC}                    % Your DHBW location:
-                                               % - "DHBW Stuttgart"
-                                               % - "DHBW Mannheim" 
-                                               % - "DHBW Karlsruhe"
-                                               % - etc.
-
-\newcommand{\uniStudy}{Computer Science}       % Your study program:
-                                               % - "Computer Science"
-                                               % - "Business Administration"
-                                               % - "Engineering"
-                                               % - "Applied Computer Science"
-                                               % - etc.
-
-\newcommand{\uniStudyYear}{2025}               % Year you started studies
-\newcommand{\uniCourse}{Course}               % Your specific course/class
-\newcommand{\uniMatrnr}{Matrikel No.}         % Your matriculation number
-\newcommand{\uniSupervisor}{Jane Doe}         % Your university supervisor/professor
-
-% ===================================================================
-% COMPANY INFORMATION
-% ===================================================================
-% Information about your partner company (where you did your practical work)
-
-\newcommand{\company}{Company ABC}                      % Company name
-\newcommand{\companyStreet}{Musterweg 123}             % Street address
-\newcommand{\companyPlace}{12345 Musterort, Germany}   % City, postal code, country
-\newcommand{\companySupervisor}{John Doe}              % Your company supervisor
-\newcommand{\companyDepartment}{Department ABC}        % Department you worked in
-
-% ===================================================================
-% CONDITIONAL FLAGS - DOCUMENT BEHAVIOR SETTINGS
-% ===================================================================
-% These control which parts of the document are included and how they behave.
-% Set to 'true' or 'false' as needed for your specific requirements.
-
-% ===================================================================
-% ONLINE SUBMISSION FLAG
-% ===================================================================
-% If you submit your document electronically (no physical signature needed)
-\newboolean{e-submission}           % Controls signature appearance
-\setboolean{e-submission}{false}    % Set to 'true' for electronic submission
-                                    % Set to 'false' for printed submission with handwritten signatures
-
-% ===================================================================
-% AUTHOR'S DECLARATION FLAG  
-% ===================================================================
-% Include the standard academic integrity declaration
-\newboolean{include-declaration}     % Controls if declaration page is included
-\setboolean{include-declaration}{true}  % Set to 'true' to include declaration
-                                        % Set to 'false' to skip declaration (not recommended)
-
-% ===================================================================
-% CONFIDENTIALITY FLAG
-% ===================================================================
-% If your report contains company-confidential information
-\newboolean{is-confidential}            % Controls confidentiality notice
-\setboolean{is-confidential}{true}      % Set to 'true' if content is confidential
-                                        % Set to 'false' for public content
-
-% ===================================================================
-% CUSTOMIZATION COMPLETE
-% ===================================================================
-% 
-% After updating all the information above:
-% 1. Save this file
-% 2. Compile your main.tex file
-% 3. Check that all information appears correctly on the title page
-% 4. Adjust any settings as needed
-%
-% COMMON ISSUES:
-% - Special characters (ä, ö, ü): Should work automatically with UTF-8
-% - Long company names: May need title page layout adjustment
-% - Multiple supervisors: You may need to modify the title page template
-% ===================================================================
+\newboolean{is-confidential}
+\setboolean{is-confidential}{true}

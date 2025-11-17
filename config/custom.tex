@@ -1,156 +1,38 @@
-% ===================================================================
-% CUSTOM COMMANDS AND SHORTCUTS
-% ===================================================================
-% 
-% This file is where you can define your own LaTeX commands to make
-% writing your document easier and more consistent.
-%
-% For beginners: Custom commands are like shortcuts or macros. Instead of
-% typing the same complex LaTeX code repeatedly, you can create a simple
-% command that does it for you.
-%
-% BENEFITS OF CUSTOM COMMANDS:
-% - Save time by creating shortcuts for frequently used text/formatting
-% - Ensure consistency throughout your document
-% - Make changes easier (change the command definition to update everywhere)
-% - Reduce typos and formatting errors
-% ===================================================================
+% Custom commands and shortcuts
 
-% ===================================================================
-% TEXT SHORTCUTS AND ABBREVIATIONS
-% ===================================================================
-% Create shortcuts for commonly used phrases and abbreviations
+% Text shortcuts
+\newcommand{\eg}{e.g.}
+\newcommand{\ie}{i.e.}
+\newcommand{\etc}{etc.}
 
-% Example: Shortcut for "e.g." (exempli gratia)
-\newcommand{\eg}{e.g.}                  % Usage: \eg instead of typing "e.g."
+% Formatting commands
+\newcommand{\important}[1]{\textbf{\textit{#1}}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\filepath}[1]{\texttt{#1}}
+\newcommand{\menuitem}[1]{\textbf{#1}}
 
-% Example: Shortcut for "i.e." (id est)  
-\newcommand{\ie}{i.e.}                  % Usage: \ie instead of typing "i.e."
+% Reference commands
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\chapref}[1]{Chapter~\ref{#1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\degree}{\ensuremath{^\circ}}
 
-% Example: Shortcut for "etc." (et cetera)
-\newcommand{\etc}{etc.}                 % Usage: \etc instead of typing "etc."
+% Citation commands
+\newcommand{\citepp}[2]{\cite[pp.~#2]{#1}}
+\newcommand{\inlinecode}[2]{\lstinline[language=#1]|#2|}
 
-% Example: Company or project name (update throughout document easily)
-% \newcommand{\companyname}{Your Company Name}    % Uncomment and customize
-% \newcommand{\projectname}{Your Project Name}    % Uncomment and customize
-
-% ===================================================================
-% FORMATTING SHORTCUTS
-% ===================================================================
-% Commands for consistent formatting of special text
-
-% Example: Highlight important terms (you can change the formatting easily)
-\newcommand{\important}[1]{\textbf{\textit{#1}}}    % Usage: \important{key concept}
-
-% Example: Format code/technical terms consistently
-\newcommand{\code}[1]{\texttt{#1}}                  % Usage: \code{function_name}
-
-% Example: Format file paths consistently
-\newcommand{\filepath}[1]{\texttt{#1}}              % Usage: \filepath{/path/to/file}
-
-% Example: Format menu items or UI elements
-\newcommand{\menuitem}[1]{\textbf{#1}}              % Usage: \menuitem{File > Save}
-
-% ===================================================================
-% ACADEMIC AND TECHNICAL SHORTCUTS
-% ===================================================================
-% Commands specific to academic writing and technical documents
-
-% Example: Reference figures consistently
-\newcommand{\figref}[1]{Figure~\ref{#1}}            % Usage: \figref{fig:myimage}
-
-% Example: Reference tables consistently  
-\newcommand{\tabref}[1]{Table~\ref{#1}}             % Usage: \tabref{tab:results}
-
-% Example: Reference chapters/sections consistently
-\newcommand{\chapref}[1]{Chapter~\ref{#1}}          % Usage: \chapref{chap:intro}
-\newcommand{\secref}[1]{Section~\ref{#1}}           % Usage: \secref{sec:method}
-
-% Example: Consistent degree symbol
-\newcommand{\degree}{\ensuremath{^\circ}}           % Usage: 45\degree
-
-% ===================================================================
-% MATHEMATICAL SHORTCUTS
-% ===================================================================
-% Commands for mathematical expressions (if your document contains math)
-
-% Example: Common mathematical sets
-% \newcommand{\R}{\mathbb{R}}              % Real numbers: \R
-% \newcommand{\N}{\mathbb{N}}              % Natural numbers: \N
-% \newcommand{\Z}{\mathbb{Z}}              % Integers: \Z
-
-% Example: Common functions
-% \newcommand{\abs}[1]{\left|#1\right|}   % Absolute value: \abs{x}
-
-% ===================================================================
-% MULTI-PARAMETER COMMANDS
-% ===================================================================
-% More complex commands that take multiple inputs
-
-% Example: Consistent citation with page numbers
-\newcommand{\citepp}[2]{\cite[pp.~#2]{#1}}          % Usage: \citepp{author2023}{15-20}
-
-% Example: Inline code with language specification
-\newcommand{\inlinecode}[2]{\lstinline[language=#1]|#2|}  % Usage: \inlinecode{Java}{System.out.println()}
-
-% ===================================================================
-% ENVIRONMENT SHORTCUTS
-% ===================================================================
-% Custom environments for special content
-
-% Example: Create a "note" box for important information
+% Special boxes
 \newcommand{\note}[1]{%
     \begin{mdframed}[backgroundcolor=yellow!20, linecolor=orange, linewidth=2pt]
     \textbf{Note:} #1
     \end{mdframed}
 }
 
-% Example: Create a "warning" box for critical information
 \newcommand{\warning}[1]{%
     \begin{mdframed}[backgroundcolor=red!10, linecolor=red, linewidth=2pt]
     \textbf{Warning:} #1
     \end{mdframed}
 }
 
-% ===================================================================
-% HOW TO CREATE YOUR OWN COMMANDS
-% ===================================================================
-%
-% BASIC SYNTAX:
-% \newcommand{\commandname}[number_of_parameters]{what_it_does}
-%
-% EXAMPLES:
-% 
-% 1. Simple text replacement (no parameters):
-%    \newcommand{\myname}{John Doe}
-%    Usage: Hello, I am \myname
-%
-% 2. Command with one parameter:
-%    \newcommand{\highlight}[1]{\textbf{\textcolor{red}{#1}}}
-%    Usage: \highlight{important text}
-%
-% 3. Command with multiple parameters:
-%    \newcommand{\fullcite}[3]{\cite{#1}, #2, pp. #3}
-%    Usage: \fullcite{author2023}{Journal Name}{15-20}
-%
-% 4. Optional parameters (advanced):
-%    \newcommand{\mycommand}[2][default]{\textbf{#1}: #2}
-%    Usage: \mycommand{text} or \mycommand[custom]{text}
-%
-% BEST PRACTICES:
-% - Use descriptive command names
-% - Test your commands before using them extensively
-% - Document complex commands with comments
-% - Keep commands simple and focused on one task
-% - Use consistent naming conventions
-%
-% ===================================================================
-
-% ===================================================================
-% YOUR CUSTOM COMMANDS GO HERE
-% ===================================================================
-% Add your own custom commands below this line
-% Remember to test them before using them in your document!
-
-% Example template for your commands:
-% \newcommand{\yourcommand}[1]{your LaTeX code here with #1}
+% Add your custom commands here

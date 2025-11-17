@@ -1,167 +1,83 @@
-% ===================================================================
-% CHAPTER 1: GETTING STARTED WITH LATEX
-% ===================================================================
-% 
-% This chapter demonstrates basic LaTeX features and serves as a learning
-% guide for beginners. It shows how to create chapters, sections, and
-% various types of content.
-%
-% For beginners: This chapter is both an example and a tutorial. You can
-% replace this content with your actual report content, but keep it as
-% reference while learning LaTeX.
-% ===================================================================
+% Example Chapter - Replace with your content
 
 \chapter{Getting Started with LaTeX}
 \label{chap:getting-started}
 
-% ===================================================================
-% CHAPTER INTRODUCTION
-% ===================================================================
-% Always start chapters with a brief introduction explaining what will be covered
+This chapter demonstrates basic LaTeX features. Replace this content with your actual report material.
 
-This chapter serves as both an introduction to your report and a demonstration of basic LaTeX features. It showcases how to create structured content including chapters, sections, subsections, and various formatting elements that you'll commonly use in academic writing.
-
-\important{Note}: You can replace this content with your actual report content once you're comfortable with LaTeX syntax.
-
-% ===================================================================
-% BASIC SECTIONS AND STRUCTURE
-% ===================================================================
-
-\section{Document Structure and Sections}
+\section{Document Structure}
 \label{sec:structure}
 
-LaTeX documents are hierarchically structured using different sectioning commands. This creates a logical flow and enables automatic numbering and table of contents generation.
-
-Here are the main structural elements you can use:
-
+Use these commands for document hierarchy:
 \begin{itemize}
-    \item \code{\textbackslash chapter\{Title\}} - Top-level divisions (like this chapter)
-    \item \code{\textbackslash section\{Title\}} - Main sections within chapters
-    \item \code{\textbackslash subsection\{Title\}} - Subdivisions within sections
-    \item \code{\textbackslash subsubsection\{Title\}} - Further subdivisions (rarely needed)
+    \item \code{\textbackslash chapter\{Title\}} - Top-level divisions
+    \item \code{\textbackslash section\{Title\}} - Main sections
+    \item \code{\textbackslash subsection\{Title\}} - Subdivisions
 \end{itemize}
 
-\subsection{Cross-References and Labels}
+\subsection{Cross-References}
 \label{subsec:references}
 
-One of LaTeX's most powerful features is automatic cross-referencing. You can refer to any numbered element (chapters, sections, figures, tables, equations) anywhere in your document.
-
-For example:
+Reference any numbered element using labels:
 \begin{itemize}
     \item This is \secref{sec:structure} of \chapref{chap:getting-started}
-    \item We're currently in \secref{subsec:references}
-    \item Later we'll see \figref{fig:example-image} and \tabref{tab:example-table}
+    \item See \figref{fig:example-image} and \tabref{tab:example-table}
 \end{itemize}
 
-\note{Labels must be unique throughout your document. Use descriptive prefixes like \code{chap:}, \code{sec:}, \code{fig:}, \code{tab:} to organize them.}
+\subsection{Text Formatting}
 
-\subsection{Text Formatting Examples}
-
-LaTeX provides various ways to format text for emphasis and clarity:
-
+Basic formatting options:
 \begin{itemize}
-    \item \textbf{Bold text} using \code{\textbackslash textbf\{text\}}
-    \item \textit{Italic text} using \code{\textbackslash textit\{text\}}
-    \item \texttt{Monospace text} using \code{\textbackslash texttt\{text\}}
-    \item \underline{Underlined text} using \code{\textbackslash underline\{text\}}
-    \item \important{Important concepts} using our custom \code{\textbackslash important\{text\}} command
+    \item \textbf{Bold text} - \code{\textbackslash textbf\{text\}}
+    \item \textit{Italic text} - \code{\textbackslash textit\{text\}}
+    \item \texttt{Monospace} - \code{\textbackslash texttt\{text\}}
+    \item \important{Important} - \code{\textbackslash important\{text\}}
 \end{itemize}
 
-% ===================================================================
-% LISTS AND ENUMERATIONS
-% ===================================================================
-
-\section{Lists and Enumerations}
+\section{Lists}
 \label{sec:lists}
 
-Lists are essential for organizing information clearly. LaTeX provides several list types:
-
-\subsection{Unordered Lists (Bullet Points)}
-
-Use \code{itemize} environment for bullet points:
-
+\subsection{Bullet Points}
 \begin{itemize}
     \item First item
-    \item Second item with a longer explanation that might wrap to multiple lines
-    \item Third item
+    \item Second item
     \begin{itemize}
         \item Nested item
-        \item Another nested item
     \end{itemize}
-    \item Fourth item
 \end{itemize}
 
-\subsection{Ordered Lists (Numbered)}
-
-Use \code{enumerate} environment for numbered lists:
-
+\subsection{Numbered Lists}
 \begin{enumerate}
-    \item First step in your process
-    \item Second step with detailed explanation
+    \item First step
+    \item Second step
     \item Third step
-    \begin{enumerate}
-        \item Sub-step A
-        \item Sub-step B
-    \end{enumerate}
-    \item Final step
 \end{enumerate}
 
-\subsection{Description Lists}
-
-Use \code{description} environment for term definitions:
-
+\subsection{Definitions}
 \begin{description}
-    \item[LaTeX] A document preparation system for high-quality typesetting
-    \item[DHBW] Duale Hochschule Baden-Württemberg (Baden-Württemberg Cooperative State University)
-    \item[PDF] Portable Document Format, the output of LaTeX compilation
+    \item[LaTeX] Document preparation system
+    \item[DHBW] Baden-Württemberg Cooperative State University
+    \item[PDF] Portable Document Format
 \end{description}
 
-% ===================================================================
-% FIGURES AND IMAGES
-% ===================================================================
-
-\section{Including Images and Figures}
+\section{Figures}
 \label{sec:figures}
-
-Images are essential for technical reports. LaTeX handles figure placement and numbering automatically.
-
-\subsection{Basic Figure Example}
-
-Here's how to include an image with proper captioning and labeling:
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{images/logo-placeholder.jpg}
-    \caption{Example of including an image with caption and automatic numbering}
+    \caption{Example image with automatic numbering}
     \label{fig:example-image}
 \end{figure}
 
-As you can see in \figref{fig:example-image}, the image is automatically numbered and can be referenced throughout your document.
+Reference figures in text: "As shown in \figref{fig:example-image}..."
 
-\subsection{Figure Placement Options}
-
-The \code{[htbp]} options control where LaTeX places your figure:
-\begin{itemize}
-    \item \code{h} - Here (approximately where you put it in the text)
-    \item \code{t} - Top of page
-    \item \code{b} - Bottom of page  
-    \item \code{p} - On a separate page of floats
-\end{itemize}
-
-\warning{LaTeX may not place figures exactly where you expect. This is normal behavior - LaTeX optimizes placement for the best overall document layout.}
-
-% ===================================================================
-% TABLES
-% ===================================================================
-
-\section{Creating Tables}
+\section{Tables}
 \label{sec:tables}
-
-Tables are crucial for presenting structured data. Here's an example of a well-formatted table:
 
 \begin{table}[htbp]
     \centering
-    \caption{Example table showing different data types and formatting}
+    \caption{Example data table}
     \label{tab:example-table}
     \begin{tabular}{@{}lcr@{}}
         \toprule
@@ -176,129 +92,64 @@ Tables are crucial for presenting structured data. Here's an example of a well-f
     \end{tabular}
 \end{table}
 
-Key features of good table formatting:
-\begin{itemize}
-    \item Use \code{\textbackslash toprule}, \code{\textbackslash midrule}, and \code{\textbackslash bottomrule} for professional lines
-    \item Center the table with \code{\textbackslash centering}
-    \item Align columns appropriately (l=left, c=center, r=right)
-    \item Always include a descriptive caption
-    \item Reference tables in your text: "As shown in \tabref{tab:example-table}..."
-\end{itemize}
+Reference tables: "Data in \tabref{tab:example-table} shows..."
 
-% ===================================================================
-% CODE LISTINGS
-% ===================================================================
-
-\section{Including Source Code}
+\section{Code}
 \label{sec:code}
 
-For technical reports, you often need to include source code. LaTeX provides excellent code formatting capabilities.
-
 \subsection{Inline Code}
-
-Use the \code{\textbackslash code\{\}} command for short code snippets like \code{function\_name()} or \code{variable\_x} within sentences.
+Use \code{function\_name()} or \code{variable\_x} in sentences.
 
 \subsection{Code Blocks}
-
-For longer code examples, use the \code{lstlisting} environment:
-
-\begin{lstlisting}[language=JavaScript, caption=Example JavaScript function, label=lst:example-js]
+\begin{lstlisting}[language=JavaScript, caption=Example function, label=lst:example-js]
 function calculateSum(numbers) {
-    // Initialize sum variable
     let sum = 0;
-    
-    // Iterate through array and add each number
     for (let i = 0; i < numbers.length; i++) {
         sum += numbers[i];
     }
-    
     return sum;
 }
 
-// Usage example
-const myNumbers = [1, 2, 3, 4, 5];
-const result = calculateSum(myNumbers);
-console.log("Sum:", result); // Output: Sum: 15
+const result = calculateSum([1, 2, 3, 4, 5]);
+console.log("Sum:", result);
 \end{lstlisting}
 
-The code in Listing~\ref{lst:example-js} demonstrates proper JavaScript syntax highlighting and formatting.
-
-% ===================================================================
-% MATHEMATICAL EXPRESSIONS
-% ===================================================================
-
-\section{Mathematical Expressions}
+\section{Mathematics}
 \label{sec:math}
 
-LaTeX excels at typesetting mathematical content. Here are some examples:
+Inline math: $E = mc^2$ or $\pi \approx 3.14159$
 
-\subsection{Inline Mathematics}
+Display equations:
+$$f(x) = \sum_{i=0}^{n} \frac{a_i x^i}{i!}$$
 
-You can include mathematical expressions in your text, such as $E = mc^2$ or $\pi \approx 3.14159$.
-
-\subsection{Display Mathematics}
-
-For more complex equations, use display mode:
-
-$$
-f(x) = \sum_{i=0}^{n} \frac{a_i x^i}{i!} = a_0 + a_1 x + \frac{a_2 x^2}{2!} + \frac{a_3 x^3}{3!} + \ldots
-$$
-
-\subsection{Numbered Equations}
-
-For important equations that you want to reference:
-
+Numbered equations:
 \begin{equation}
 \label{eq:quadratic-formula}
 x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 \end{equation}
 
-Equation~\ref{eq:quadratic-formula} shows the famous quadratic formula.
+Reference: "Equation~\ref{eq:quadratic-formula} shows the quadratic formula."
 
-% ===================================================================
-% CITATIONS AND REFERENCES
-% ===================================================================
-
-\section{Citations and Bibliography}
+\section{Citations}
 \label{sec:citations}
 
-Academic writing requires proper citations. This template uses modern biblatex for citation management.
-
-\subsection{How Citations Work}
-
-Add your references to \filepath{appendix/sources.bib}, then cite them in your text. The bibliography at the end of your document will be automatically generated.
-
-\subsection{Citation Examples}
-
-Here are different ways to cite sources:
+Add references to \filepath{appendix/sources.bib}, then cite:
 \begin{itemize}
-    \item Basic citation: LaTeX is a powerful typesetting system~\cite{lamport1994latex}.
-    \item Citation with page numbers: Advanced LaTeX techniques are covered extensively~\cite[pp.~123-145]{companion2004latex}.
-    \item Multiple citations: Several sources discuss this topic~\cite{knuth1984texbook,mittelbach2004latex}.
+    \item Basic: LaTeX is powerful~\cite{lamport1994latex}
+    \item With pages: Advanced techniques~\cite[pp.~123-145]{companion2004latex}
+    \item Multiple: Several sources~\cite{knuth1984texbook,mittelbach2004latex}
 \end{itemize}
 
-\note{Add your actual references to \filepath{appendix/sources.bib} and replace these example citations with your real sources.}
+\section{Summary}
 
-% ===================================================================
-% CHAPTER SUMMARY
-% ===================================================================
-
-\section{Chapter Summary}
-\label{sec:summary}
-
-This chapter has introduced you to the fundamental LaTeX concepts you'll need for your report:
-
+This chapter covered:
 \begin{enumerate}
-    \item Document structure with chapters, sections, and subsections
-    \item Text formatting and emphasis
-    \item Lists and enumerations  
-    \item Figures and images
-    \item Tables and data presentation
-    \item Source code inclusion
+    \item Document structure and cross-references
+    \item Text formatting and lists
+    \item Figures and tables
+    \item Code listings
     \item Mathematical expressions
-    \item Citations and references
+    \item Citations
 \end{enumerate}
 
-In the following chapters, you can replace this example content with your actual report material, using these formatting techniques to create a professional, well-structured document.
-
-\warning{Remember to update \filepath{config/metadata.tex} with your personal information before compiling your final document!}
+Replace this content with your actual report material.

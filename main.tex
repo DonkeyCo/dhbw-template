@@ -1,146 +1,58 @@
-% ===================================================================
 % DHBW Report Template - Main Document
-% ===================================================================
-% 
-% This is the main LaTeX file for your DHBW (Duale Hochschule Baden-Württemberg) 
-% report. This template provides a complete structure for academic reports, 
-% theses, and project documentation.
-%
-% HOW TO USE THIS TEMPLATE:
-% 1. Update your personal information in config/metadata.tex
-% 2. Write your content in the files under content/ directory
-% 3. Add your references to appendix/sources.bib
-% 4. Compile this file (main.tex) to generate your PDF
-%
-% COMPILATION:
-% Use pdflatex or a LaTeX editor like TeXStudio, Overleaf, or VS Code with LaTeX Workshop
-% Command line: pdflatex main.tex && biber main && pdflatex main.tex && pdflatex main.tex
-%
-% FILE STRUCTURE:
-% - config/     : All configuration files (formatting, packages, metadata)
-% - content/    : Your actual report content (chapters)
-% - frontmatter/: Title page, abstract, declaration, etc.
-% - appendix/   : Appendices and bibliography
-% - images/     : All images and figures
-%
-% ===================================================================
 
-% ===================================================================
-% DOCUMENT CLASS: KOMA-Script Report Class
-% ===================================================================
-% We use 'scrreprt' (KOMA-Script report class) which is designed for
-% academic documents and provides better typography than standard LaTeX classes.
-%
-% Document class options explained:
 \documentclass[
-  fontsize=12pt,           % Font size - standard for academic work
-  paper=A4,               % Paper size - European standard
-  twoside=false,          % Single-sided printing (set to true for double-sided)
-  listof=totoc,           % Include lists (figures, tables) in table of contents
-  bibliography=totoc,     % Include bibliography in table of contents
-  titlepage,              % Create a separate title page
-  headsepline            % Add a line under page headers
+  fontsize=12pt,
+  paper=A4,
+  twoside=false,
+  listof=totoc,
+  bibliography=totoc,
+  titlepage,
+  headsepline
 ]{scrreprt}
 
-% Load all document configuration (formatting, packages, metadata)
 \input{config/preamble}
 
 \begin{document}
 
-% ===================================================================
-% TITLE PAGE
-% ===================================================================
-% Creates the official DHBW title page with logos and metadata
+% Title page
 \include{frontmatter/titlepage}
 
-% ===================================================================
-% FRONT MATTER SETUP
-% ===================================================================
-% Save current page number and switch to Roman numerals for front matter
-% This is standard academic formatting where front matter (abstract, TOC, etc.)
-% uses Roman numerals (i, ii, iii...) and main content uses Arabic (1, 2, 3...)
+% Front matter with Roman numerals
 \newcounter{savepage}
 \pagenumbering{Roman}
 
-% ===================================================================
-% FRONT MATTER SECTIONS
-% ===================================================================
-% These sections appear before your main content and use Roman page numbering
-
-% Abstract/Summary of your work
 \include{frontmatter/abstract}
-
-% Author's declaration (academic integrity statement)
 \include{frontmatter/declaration}
 
-% Confidentiality notice (only included if is-confidential is set to true in metadata.tex)
+% Conditional confidentiality notice
 \ifthenelse{\boolean{is-confidential}}
     {\include{frontmatter/confidential}}
     {}
 
-% ===================================================================
-% AUTOMATED LISTS AND INDEXES
-% ===================================================================
-% These are automatically generated based on your content
-
-% Table of Contents - lists all chapters, sections, and subsections
+% Auto-generated lists
 \tableofcontents
-
-% List of abbreviations/acronyms used in your document
 \include{frontmatter/abbreviations}
-
-% List of all figures in your document (automatically generated)
 \listoffigures
-
-% List of all tables in your document (automatically generated)
 \listoftables
 
-% List of all code listings (automatically generated)
-% First rename the default "Listings" title to something more descriptive
 \renewcommand{\lstlistlistingname}{Listings}
 \lstlistoflistings
 
-% Save the current page number to restore later
 \setcounter{savepage}{\value{page}}
 
-% ===================================================================
-% MAIN CONTENT SETUP
-% ===================================================================
-% Switch to Arabic page numbering for the main content
-% Start fresh on a right-hand page (cleardoublepage)
+% Main content with Arabic numerals
 \cleardoublepage
 \pagenumbering{arabic}
-
-% Set font family to Roman (standard serif font)
 \rmfamily
-
-% Set line spacing to 1.5 (standard for academic documents)
 \onehalfspacing
 
-% ===================================================================
-% MAIN CONTENT - YOUR CHAPTERS
-% ===================================================================
-% Add your chapters here. Each chapter should be in a separate .tex file
-% in the content/ directory for better organization.
-%
-% TO ADD A NEW CHAPTER:
-% 1. Create a new file: content/chapterX.tex
-% 2. Add: \include{content/chapterX} below
-% 3. Start your chapter file with: \chapter{Your Chapter Title}
-
+% Chapters - add new chapters here
 \include{content/chapter1}
 
-% ===================================================================
-% APPENDICES
-% ===================================================================
-% Additional material that supports your main content
+% Appendices
 \include{appendix/appendix}
 
-% ===================================================================
-% BIBLIOGRAPHY/REFERENCES
-% ===================================================================
-% Automatically generates the bibliography from appendix/sources.bib
-% Uses biblatex with numeric style (configured in config/dependencies.tex)
+% Bibliography
 \printbibliography[title=Bibliography]
 
 \end{document}

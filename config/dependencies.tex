@@ -1,144 +1,67 @@
-% ===================================================================
-% LATEX PACKAGES AND DEPENDENCIES
-% ===================================================================
-% 
-% This file loads all the LaTeX packages needed for your document.
-% Packages extend LaTeX's functionality and provide additional features.
-%
-% For beginners: Think of packages like plugins or extensions that add
-% specific capabilities to your document (like handling images, tables,
-% citations, etc.).
-%
-% IMPORTANT: The order of package loading can matter! Some packages
-% must be loaded before others to avoid conflicts.
-% ===================================================================
+% LaTeX packages and dependencies
 
-% ===================================================================
-% BASIC TEXT AND LANGUAGE SUPPORT
-% ===================================================================
-% These packages handle character encoding and language settings
+% Text and Language
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[babel]{csquotes}
+\usepackage[T1]{fontenc}
 
-\usepackage[utf8]{inputenc}     % Handle Unicode characters (ä, ö, ü, é, etc.)
-\usepackage[english]{babel}     % English language support (hyphenation, etc.)
-                                % Change to [german] if writing in German
-\usepackage[babel]{csquotes}    % Context-sensitive quotation marks
-\usepackage[T1]{fontenc}        % Better font encoding for European characters
+% Graphics and Figures
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{svg}
+\usepackage{xcolor}
 
-% ===================================================================
-% GRAPHICS AND FIGURES
-% ===================================================================
-% Packages for handling images and visual elements
+% Document Formatting
+\usepackage{setspace}
+\usepackage{titletoc}
 
-\usepackage{graphicx}           % Include images (PNG, JPG, PDF)
-\usepackage{wrapfig}            % Wrap text around figures
-\usepackage{svg}                % Support for SVG vector graphics
-\usepackage{xcolor}             % Define and use colors
+% Logic and Programming
+\usepackage{ifthen}
 
-% ===================================================================
-% DOCUMENT FORMATTING AND LAYOUT
-% ===================================================================
-% Packages that control how your document looks
+% Specialized Content
+\usepackage{acronym}
+\usepackage{appendix}
 
-\usepackage{setspace}           % Control line spacing (single, double, 1.5x)
-\usepackage{titletoc}           % Customize table of contents appearance
+% Hyperlinks
+\usepackage[hidelinks, breaklinks=true]{hyperref}
 
-% ===================================================================
-% CONDITIONAL LOGIC AND PROGRAMMING
-% ===================================================================
-% Packages for advanced document logic
+% Source Code
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
 
-\usepackage{ifthen}             % If-then-else logic in LaTeX
-                                % Used for conditional content (confidential notices, etc.)
+% Tables
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{tabularx}
 
-% ===================================================================
-% SPECIALIZED CONTENT TYPES
-% ===================================================================
-% Packages for specific types of content
+% Math and Boxes
+\usepackage{amsthm}
+\usepackage[framemethod=tikz]{mdframed}
 
-\usepackage{acronym}            % Manage abbreviations and acronyms
-\usepackage{appendix}           % Better appendix handling
+% Fonts
+\usepackage{sourcecodepro}
 
-% ===================================================================
-% HYPERLINKS AND NAVIGATION
-% ===================================================================
-% Make your PDF interactive with clickable links
-
-\usepackage[                    % Clickable links (includes "nameref", "url" packages)
-    hidelinks,                  % Hide the colored boxes around links
-    breaklinks=true             % Allow URLs to break across lines
-]{hyperref}
-
-% ===================================================================
-% SOURCE CODE DISPLAY
-% ===================================================================
-% Packages for showing programming code in your document
-
-\usepackage{listings}           % Display source code with syntax highlighting
-\usepackage{algorithm}          % Display algorithms
-\usepackage[noend]{algpseudocode} % Write pseudocode for algorithms
-
-% ===================================================================
-% TABLES AND DATA PRESENTATION
-% ===================================================================
-% Packages for creating professional tables
-
-\usepackage{booktabs}           % Professional table formatting (better lines)
-\usepackage{multirow}           % Cells that span multiple rows
-\usepackage{siunitx}            % Proper formatting of numbers and units
-\usepackage{tabularx}           % Tables that automatically fit page width
-
-% ===================================================================
-% MATHEMATICAL CONTENT AND BOXES
-% ===================================================================
-% Packages for math and highlighted content boxes
-
-\usepackage{amsthm}             % Mathematical theorems and proofs
-\usepackage[framemethod=tikz]{mdframed} % Create colored boxes around content
-
-% ===================================================================
-% FONTS AND TYPOGRAPHY
-% ===================================================================
-% Packages for better font handling
-
-\usepackage{sourcecodepro}      % Source Code Pro font for code listings
-                                % Provides a clean, professional monospace font
-
-% ===================================================================
-% BIBLIOGRAPHY AND CITATIONS
-% ===================================================================
-% Modern citation and bibliography system (replaces older BibTeX)
-
+% Bibliography
 \usepackage[
-    backend = biber,            % Use biber backend (more powerful than BibTeX)
-    language = auto,            % Auto-detect language from babel settings
-    style = numeric,            % Citation style: [1], [2], [3] (change to 'alphabetic' for [Doe21])
-    sorting = none,             % Don't sort references (appear in order of first citation)
-    sortcites = true,           % Sort multiple citations: [1,2,3] instead of [3,1,2]
-    block = ragged,             % Allow ragged right alignment in bibliography
-    hyperref = true,            % Make citations clickable links
-    bibencoding = auto,         % Auto-detect bibliography file encoding
-    giveninits = true,          % Use initials for first names (J. Doe instead of John Doe)
-    doi=false,                  % Don't show DOI numbers (set to true if needed)
-    isbn=false,                 % Don't show ISBN numbers (set to true if needed)
-    alldates=short              % Use short date format (2023 instead of 2023-01-01)
+    backend = biber,
+    language = auto,
+    style = numeric,
+    sorting = none,
+    sortcites = true,
+    block = ragged,
+    hyperref = true,
+    bibencoding = auto,
+    giveninits = true,
+    doi=false,
+    isbn=false,
+    alldates=short
 ]{biblatex}
 
-% Load your bibliography file (where all your references are stored)
 \addbibresource{appendix/sources.bib}
 
-% Fine-tune URL line breaking in bibliography
-% These settings prevent awkward line breaks in long URLs
-\setcounter{biburlnumpenalty}{3000}     % Penalty for breaking at numbers
-\setcounter{biburlucpenalty}{6000}      % Penalty for breaking at uppercase letters
-\setcounter{biburllcpenalty}{9000}      % Penalty for breaking at lowercase letters
-
-% ===================================================================
-% PACKAGE LOADING COMPLETE
-% ===================================================================
-% All packages are now loaded. The document is ready for content!
-% 
-% TROUBLESHOOTING TIPS:
-% - If you get "Package not found" errors, you may need to install missing packages
-% - If you get conflicting package errors, check the loading order
-% - Some packages have options that must match your document needs
-% ===================================================================
+\setcounter{biburlnumpenalty}{3000}
+\setcounter{biburlucpenalty}{6000}
+\setcounter{biburllcpenalty}{9000}
