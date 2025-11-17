@@ -25,6 +25,23 @@
 %
 % ===================================================================
 
+% ===================================================================
+% DOCUMENT CLASS: KOMA-Script Report Class
+% ===================================================================
+% We use 'scrreprt' (KOMA-Script report class) which is designed for
+% academic documents and provides better typography than standard LaTeX classes.
+%
+% Document class options explained:
+\documentclass[
+  fontsize=12pt,           % Font size - standard for academic work
+  paper=A4,               % Paper size - European standard
+  twoside=false,          % Single-sided printing (set to true for double-sided)
+  listof=totoc,           % Include lists (figures, tables) in table of contents
+  bibliography=totoc,     % Include bibliography in table of contents
+  titlepage,              % Create a separate title page
+  headsepline            % Add a line under page headers
+]{scrreprt}
+
 % Load all document configuration (formatting, packages, metadata)
 \input{config/preamble}
 
